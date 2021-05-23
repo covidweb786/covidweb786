@@ -1,0 +1,97 @@
+/*======
+*
+* 10. Responsive
+*
+======*/
+@media (max-width: 1415px) {
+
+}
+
+@media (max-width: 1310px) {
+
+}
+
+@media (max-width: 1300px) {
+
+}
+
+@media (max-width: 1199px) {	
+
+}
+
+@media (max-width: 1160px) {
+	
+}
+
+@media (max-width: 1050px) {
+	
+}
+
+@media (max-width: 999px) {
+	
+}
+
+@media (max-width: 991px) {
+
+}
+
+@media (max-width: 950px) {
+	
+}
+
+@media (max-width: 900px) {
+	
+}
+
+@media (max-width: 767px) {
+	
+}
+
+@media (max-width: 600px) {
+	
+}
+
+@media (max-width: 500px) {
+
+}
+
+@media (max-width: 480px) {
+	
+}
+
+@media (max-width: 450px) {
+
+}
+
+@media (max-width: 420px) {
+
+}
+
+@media (max-width: 414px) {
+
+}
+
+
+@media (max-width: 400px) {
+
+}
+
+
+@media (max-width: 320px) {
+	.main-heading {
+		font-size: 23px;
+  	}
+	.u-name {
+
+		font-size: 16px;
+	}
+	.form-question {
+		font-size: 18px;
+	}
+	.question-detail {
+		font-size: 16px;
+	}
+	.sub-heading{
+		font-size: 18px;
+	}
+}

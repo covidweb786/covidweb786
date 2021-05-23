@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="icon" type="image/png" href="/static/images/icons/favicon.ico"/>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/bootstrap/css/bootstrap.min.css">
+
+	<!--Main CSS -->
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+
+	<!--Responsive CSS -->
+	<link rel="stylesheet" type="text/css" href="/static/css/responsive.css">
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+	<title>Result</title>
+</head>
+<body>
+
+	<!--Nav-Start -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">Engine X</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="{% url 'index' %}">Home</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="{% url 'test' %}">Test</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="{% url 'about' %}">About</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!--/Nav-End -->
+
+	<!-- Take-Test-Start -->
+	<section id="take-test">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-12 mb-3">
+					<div class="hero-heading">
+						<h2 class="main-heading pb-3">Result</h2>
+					</div>
+					<h2 class="sub-heading">logistic regression prediction</h2>
+				</div>
+			</div><!-- /Row -->
+
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="cdev" data-percent={{b}} data-duration="1000"  data-color="#bdc3c7,#26A69A"></div>
+
+					<h2 class="sub-heading">Random Forest Estimation</h2>
+					<h2 class="sub-heading">{{a}}</h2>
+					<!-- Line-Chart -->
+					<div id="chartContainer" style="height: 300px; width: 100%;" class="mt-4 mb-4"></div>
+					<!-- /Line-Chart -->
+				</div>
+			</div><!-- /Row -->
+
+			<div class="dashed-border mt-3 mb-3"></div>
+			<h2 class="sub-heading mt-3">do you wish to retake the test</h2>
+
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="submit-test mb-3">
+						<form action="{% url 'index' %}" method="post">
+							<button type="submit"  class="btn btn-success d-block mx-auto btn-text text-center w-100">Yes</button>
+							{% csrf_token %}
+						</form>
+
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="submit-test mb-3">
+						<form action="{% url 'index' %}" method="post">
+							<button class="btn btn-danger d-block mx-auto btn-text text-center w-100">No</button>
+								{% csrf_token %}
+						</form>
+					</div>
+				</div>
+			</div><!-- /Row -->
+		</div><!-- /Container -->
+	</section>
+	<!-- /Take-Test-End -->
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+	<!-- Circle-Progress -->
+	<script src="/static/js/circlos.js"></script>
+
+	<!-- Circle-Progress-init -->
+	<script>
+		$(document).ready(function(){
+      // init
+      $(".cdev").circlos();
+  });
+</script>
+
+
+	<!-- Line-Chart -->
+	<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+	<!-- Line-Chart -->
+	<script type="text/javascript">
+		window.onload = function () {
+			var c = "{{c}}";
+			console.log(c)
+			var chart = new CanvasJS.Chart("chartContainer",
+			{
+				title:{
+					text: "COVID-19 GRAPH"
+				},
+				data: [
+				{
+					type: "line",
+					dataPoints: [
+					{ x: 10, y: 21 },
+					{ x: 20, y: 25},
+					{ x: 30, y: 20 },
+					{ x: 40, y: 25 },
+					{ x: 50, y: 27 },
+					{ x: 60, y: 28 },
+					{ x: 70, y: 28 },
+					{ x: 80, y: 24 },
+					{ x: 90, y: 26}
+
+					]
+				},
+				{
+					type: "line",
+					dataPoints: [
+					{ x: 10, y: 31 },
+					{ x: 20, y: 35},
+					{ x: 30, y: 30 },
+					{ x: 40, y: 35 },
+					{ x: 50, y: 35 },
+					{ x: 60, y: 38 },
+					{ x: 70, y: 38 },
+					{ x: 80, y: 34 },
+					{ x: 90, y: 44}
+
+					]
+				},
+				{
+					type: "line",
+					dataPoints: [
+					{ x: 10, y: 45 },
+					{ x: 20, y: 50},
+					{ x: 30, y: 40 },
+					{ x: 40, y: 45 },
+					{ x: 50, y: 45 },
+					{ x: 60, y: 48 },
+					{ x: 70, y: 43 },
+					{ x: 80, y: 41 },
+					{ x: 90, y: 28}
+
+					]
+				},
+				{
+					type: "line",
+					dataPoints: [
+					{ x: 10, y: 71 },
+					{ x: 20, y: 55},
+					{ x: 30, y: 50 },
+					{ x: 40, y: 65 },
+					{ x: 50, y: 95 },
+					{ x: 60, y: 68 },
+					{ x: 70, y: 28 },
+					{ x: 80, y: 34 },
+					{ x: 90, y: 14}
+
+					]
+				}
+				]
+			});
+
+			chart.render();
+		}
+	</script>
+
+	<!-- Circle-Porgress-Bar -->
+	<script>
+		var el = document.getElementById('graph'); // get canvas
+
+var options = {
+    percent:  el.getAttribute('data-percent') || 25,
+    size: el.getAttribute('data-size') || 220,
+    lineWidth: el.getAttribute('data-line') || 15,
+    rotate: el.getAttribute('data-rotate') || 0
+}
+
+var canvas = document.createElement('canvas');
+var span = document.createElement('span');
+span.textContent = options.percent + '%';
+
+if (typeof(G_vmlCanvasManager) !== 'undefined') {
+    G_vmlCanvasManager.initElement(canvas);
+}
+
+var ctx = canvas.getContext('2d');
+canvas.width = canvas.height = options.size;
+
+el.appendChild(span);
+el.appendChild(canvas);
+
+ctx.translate(options.size / 2, options.size / 2); // change center
+ctx.rotate((-1 / 2 + options.rotate / 180) * Math.PI); // rotate -90 deg
+
+//imd = ctx.getImageData(0, 0, 240, 240);
+var radius = (options.size - options.lineWidth) / 2;
+
+var drawCircle = function(color, lineWidth, percent) {
+		percent = Math.min(Math.max(0, percent || 1), 1);
+		ctx.beginPath();
+		ctx.arc(0, 0, radius, 0, Math.PI * 2 * percent, false);
+		ctx.strokeStyle = color;
+        ctx.lineCap = 'round'; // butt, round or square
+		ctx.lineWidth = lineWidth
+		ctx.stroke();
+};
+
+drawCircle('#efefef', options.lineWidth, 100 / 100);
+drawCircle('#555555', options.lineWidth, options.percent / 100);
+		$(function(){
+			var $ppc = $('.progress-pie-chart'),
+			percent = parseInt($ppc.data('percent')),
+			deg = 360*percent/100;
+			if (percent > 50) {
+				$ppc.addClass('gt-50');
+			}
+			$('.ppc-progress-fill').css('transform','rotate('+ deg +'deg)');
+			$('.ppc-percents span').html(percent+'%');
+		});
+	</script>
+
+
+
+
+</body>
+</html>

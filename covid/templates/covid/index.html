@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- required="required" meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" type="image/png" href="/static/images/icons/favicon.ico"/>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/bootstrap/css/bootstrap.min.css">
+
+	<!--Main CSS -->
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+
+	<!--Responsive CSS -->
+	<link rel="stylesheet" type="text/css" href="/static/css/responsive.css">
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+	<title>Home</title>
+</head>
+<body>
+
+	<!--Nav-Start -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">Engine X</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="{% url 'index' %}">Home</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="{% url 'test' %}">Test</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="{% url 'about' %}">About</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!--/Nav-End -->
+
+
+
+
+	<!-- Take-Test-Start -->
+	<div>
+		<div class="container-contact3">
+			<div class="wrap-contact3">
+				<form class="form-detail" action="{% url 'prediction' %}"  method="post" id="myform">
+					{% csrf_token %}
+
+
+
+		<section id="take-test">
+			<div class="container">
+				<div class="col-lg-12 mb-3">
+					<div class="hero-heading">
+						<h2 class="main-heading pb-3">test</h2>
+					</div>
+				</div>
+
+
+			<div class="row">
+				<div class="col-lg-2"></div>
+				<div class="col-lg-10 mb-3">
+					<div class="user-info">
+						<i class="fa fa-user fa-2x"></i>
+						<span class="u-name ml-3">name</span>
+					</div>
+				</div>
+			</div>
+
+		<div class="row">
+			<div class="col-lg-2"></div>
+			<div class="col-lg-10">
+				<div class="user-input">
+					<div class="input-group mb-3">
+						<input type="text"  name="name" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Please Enter Your Name" required="required">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row mb-3">
+			<div class="col-lg-2">
+				<span class="form-question">q1</span>
+			</div>
+			<div class="col-lg-4">
+				<span class="question-detail">Do you have a cough?</span>
+			</div>
+			<div class="btn-group btn-group-toggle col-lg-6" data-toggle="buttons">
+				<div class="col">
+					<label class="btn btn-success w-100 btn-text mb-3 mb-md-3 mb-lg-2">
+						<input required="required" type="radio" autocomplete="off"  type="radio" name="cough" value=1
+							style="display:none;"> Yes
+					</label>
+				</div>
+
+				<div class="col">
+					<label class="btn btn-danger w-100 btn-text mb-3 mb-md-3 mb-lg-2">
+						<input type="radio" autocomplete="off"  type="radio" name="cough" value=0
+							style="display:none;"> No
+					</label>
+				</div>
+			</div>
+
+
+		</div>
+
+
+
+		<div class="row mb-3">
+			<div class="col-lg-2">
+				<span class="form-question">q2</span>
+			</div>
+			<div class="col-lg-4">
+				<span class="question-detail">Do you have sore throat?</span>
+			</div>
+			<div class="btn-group btn-group-toggle col-lg-6" data-toggle="buttons">
+				<div class="col">
+					<label class="btn btn-success w-100 btn-text mb-3 mb-md-3 mb-lg-2">
+						<input required="required" type="radio" autocomplete="off"  type="radio" name="sore" value=1
+							style="display:none;"> Yes
+					</label>
+				</div>
+
+				<div class="col">
+					<label class="btn btn-danger w-100 btn-text mb-3 mb-md-3 mb-lg-2">
+						<input type="radio" autocomplete="off"  type="radio" name="sore" value=0
+							style="display:none;"> No
+					</label>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row mb-3">
+			<div class="col-lg-2">
+				<span class="form-question">q3</span>
+			</div>
+			<div class="col-lg-4">
+				<span class="question-detail">Are you 60 or older?</span>
+			</div>
+			<div class="btn-group btn-group-toggle col-lg-6" data-toggle="buttons">
+				<div class="col">
+					<label class="btn btn-success w-100 btn-text mb-3 mb-md-3 mb-lg-2">
+						<input required="required" type="radio" autocomplete="off"  type="radio" name="older" value=1
+							style="display:none;"> Yes
+					</label>
+				</div>
+
+				<div class="col">
+					<label class="btn btn-danger w-100 btn-text mb-3 mb-md-3 mb-lg-2">
+						<input type="radio" autocomplete="off"  type="radio" name="older" value=0
+							style="display:none;"> No
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="row mb-3">
+			<div class="col-lg-2">
+				<span class="form-question">q4</span>
+			</div>
+			<div class="col-lg-4">
+				<span class="question-detail">Do you have headache?</span>
+			</div>
+			<div class="btn-group btn-group-toggle col-lg-6" data-toggle="buttons">
+				<div class="col">
+					<label class="btn btn-success w-100 btn-text mb-3 mb-md-3 mb-lg-2">
+						<input required="required" type="radio" autocomplete="off"  type="radio" name="head" value=1
+							style="display:none;"> Yes
+					</label>
+				</div>
+
+				<div class="col">
+					<label class="btn btn-danger w-100 btn-text mb-3 mb-md-3 mb-lg-2">
+						<input type="radio" autocomplete="off"  type="radio" name="head" value=0
+							style="display:none;"> No
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="row mb-3">
+			<div class="col-lg-2">
+				<span class="form-question">q5</span>
+			</div>
+			<div class="col-lg-4">
+				<span class="question-detail">Do you have fever?</span>
+			</div>
+			<div class="btn-group btn-group-toggle col-lg-6" data-toggle="buttons">
+				<div class="col">
+					<label class="btn btn-success w-100 btn-text mb-3 mb-md-3 mb-lg-2">
+						<input required="required" type="radio" autocomplete="off"  type="radio" name="fever" value=1
+							style="display:none;"> Yes
+					</label>
+				</div>
+
+				<div class="col">
+					<label class="btn btn-danger w-100 btn-text mb-3 mb-md-3 mb-lg-2">
+						<input type="radio" autocomplete="off"  type="radio" name="fever" value=0
+							style="display:none;"> No
+					</label>
+				</div>
+			</div>
+		</div>
+
+			<div class="row mb-3">
+				<div class="col-lg-2">
+					<span class="form-question">q6</span>
+				</div>
+				<div class="col-lg-4">
+					<span class="question-detail">Do you have shortness of breath?</span>
+				</div>
+				<div class="btn-group btn-group-toggle col-lg-6" data-toggle="buttons">
+					<div class="col">
+						<label class="btn btn-success w-100 btn-text mb-3 mb-md-3 mb-lg-2">
+							<input required="required" type="radio" autocomplete="off"  type="radio" name="breath" value=1
+								style="display:none;"> Yes
+						</label>
+					</div>
+
+					<div class="col">
+						<label class="btn btn-danger w-100 btn-text mb-3 mb-md-3 mb-lg-2">
+							<input type="radio" autocomplete="off"  type="radio" name="breath" value=0
+								style="display:none;"> No
+						</label>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row mb-3">
+				<div class="col-lg-2">
+					<span class="form-question">q7</span>
+				</div>
+				<div class="col-lg-4">
+					<span class="question-detail">Are you a male?</span>
+				</div>
+				<div class="btn-group btn-group-toggle col-lg-6" data-toggle="buttons">
+					<div class="col">
+						<label class="btn btn-success w-100 btn-text mb-3 mb-md-3 mb-lg-2">
+							<input required="required" type="radio" autocomplete="off"  type="radio" name="male" value=1
+								style="display:none;"> Yes
+						</label>
+					</div>
+
+					<div class="col">
+						<label class="btn btn-danger w-100 btn-text mb-3 mb-md-3 mb-lg-2">
+							<input type="radio" autocomplete="off"  type="radio" name="male" value=0
+								style="display:none;"> No
+						</label>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mb-3">
+				<div class="col-lg-2">
+					<span class="form-question">q8</span>
+				</div>
+				<div class="col-lg-4">
+					<span class="question-detail">Are you a confirmed closed contact?</span>
+				</div>
+				<div class="btn-group btn-group-toggle col-lg-6" data-toggle="buttons">
+					<div class="col">
+						<label class="btn btn-success w-100 btn-text mb-3 mb-md-3 mb-lg-2">
+							<input required="required" type="radio" name="patient" value=1
+								style="display:none;"> Yes
+						</label>
+					</div>
+
+					<div class="col">
+						<label class="btn btn-danger w-100 btn-text mb-3 mb-md-3 mb-lg-2">
+							<input type="radio" type="radio" name="patient" value=0
+								style="display:none;"> No
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="submit-test mb-3">
+						<button type="submit" class="btn btn-success d-block mx-auto btn-text text-center">Submit</button>
+					</div>
+				</div>
+			</div>
+			<div class="dashed-border"></div>
+
+			</div>
+
+			</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+
+		</section>
+
+	<!-- /Take-Test-End -->
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="/static/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+		<script src="/static/vendor/bootstrap/js/popper.js"></script>
+		<script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+		<script src="/static/vendor/select2/select2.min.js"></script>
+		<script>
+			$(".selection-2").select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $('#dropDownSelect1')
+			});
+		</script>
+	<!--===============================================================================================-->
+		<script src="js/main.js"></script>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-23581568-13');
+	</script>
+
+
+</body>
+</html>
